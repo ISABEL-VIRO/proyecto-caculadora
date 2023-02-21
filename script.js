@@ -1,5 +1,9 @@
 const display = document.querySelector("#display");
 const buttons = document.querySelectorAll("button");
+const themeTogglerBtn = document.querySelector(".theme-toggler");
+const calculator = document.querySelector(".calculator");
+const togglerIcon = document.querySelector(".toggler-icon");
+let isDark = true;
 
 buttons.forEach((btn)=>{
 
@@ -8,7 +12,7 @@ buttons.forEach((btn)=>{
     if(btn.id == "clear"){
       display.innerText ="";
 
-    }else if(btn.id =="backspace"){
+    }else if(btn.id =="backEspace"){
       //Borrar caracter pot caracter del display
       let string = display.innerText.toString();
       display.innerText = string.substr(0,string.length-1);
@@ -31,4 +35,11 @@ buttons.forEach((btn)=>{
 
   }
 
-})
+});
+
+
+themeTogglerBtn.onclick = ()=>{
+   calculator.classList.toggle("dark");
+   themeTogglerBtn.classList.toggle("active");
+   isDark =! isDark;
+}

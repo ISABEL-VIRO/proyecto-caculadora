@@ -33,8 +33,18 @@ body{
 }
 
 #display{
-  color:rgb(42, 24, 79);
+  margin:20px 10px;
+  height: 120px;
+  width: auto;
+  display: flex;
+  align-items:flex-end ;
+  justify-content: flex-end;
+  /* color:rgb(255, 255, 255); */
+  color:#9e9e9e;
+  font-size:30px;
+
 }
+
 
 #clear{
   background-color: #734a91;
@@ -52,31 +62,89 @@ body{
   background-color:#f1d7ff;
 }
 
-
-.buttons{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#backEspace img {
+   width: 33px;
 }
+
 
 .table{
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  
 }
 
 .row-tr{
   display: flex;
   flex-direction:column;
   flex-wrap: wrap; 
-  row-gap: 3px;
+  row-gap: 8px;
 }
 
 .column-td{
   display: flex;
   flex-direction:row;
-  column-gap: 3px;
+  column-gap:8px;
+  
+  
+}
+
+.theme-toggler {
+  position : absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.theme-toggler::before{
+  position: absolute;
+  content:" ";
+  height: 30px;
+  width: 30px;
+  top:50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: #333;
+
+  z-index:-1;
+}
+
+.theme-toggler.active{
+  background-color: #333;
 
 
 }
+.theme-toggler.active::before{
+  background-color: #ffffff;
+}
+
+  .buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+  }
+
+  button{
+    height: 60px;
+    width: 60px;
+    border:0;
+    border-radius: 30px;
+    font-size: 20px;
+    cursor:pointer;
+    transition:all 0.2s ease;
+
+  }
+
+  button:hover{
+    transform: scale(1.1);
+  }
+
+
+/* Them Dark */
+.dark{
+background-color: #000000;
+}
+
+
